@@ -15,4 +15,4 @@ RUN pnpm install
 
 COPY . .
 
-RUN pnpm start
+RUN pnpm build
