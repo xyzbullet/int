@@ -3,10 +3,12 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.yaml*", "./"]
+RUN npm install -g pnpm
 
-RUN npm install
+COPY ["package.json", "pnpm-lock.yaml*", "./"]
+
+RUN pnpm install
 
 COPY . .
 
-RUN npm build
+RUN pnpm start
